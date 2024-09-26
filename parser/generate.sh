@@ -1,0 +1,5 @@
+#!/bin/sh
+
+wget -q --no-clobber https://www.antlr.org/download/antlr-4.13.2-complete.jar
+alias antlr4='java -Xmx500M -cp "./antlr-4.13.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+antlr4 -Dlanguage=Go -no-visitor -package parsing -o ../parsing *.g4
